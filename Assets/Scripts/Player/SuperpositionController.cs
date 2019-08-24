@@ -9,10 +9,12 @@ public class SuperpositionController : MonoBehaviour
     public GameObject m_Follow;
 
     private Rigidbody2D m_Rigidbody;
+    private Animator m_Animator;
 
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody2D>();
+        m_Animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
