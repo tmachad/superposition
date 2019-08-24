@@ -21,18 +21,11 @@ public class PlayerController : MonoBehaviour
     private float m_JumpSpeed;
     private bool m_JumpStillPressed = false;
 
-    // Start is called before the first frame update
     private void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody2D>();
         m_Collider = GetComponent<Collider2D>();
         m_JumpSpeed = Mathf.Sqrt(-2 * Physics2D.gravity.y * m_JumpHeight);
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-        
     }
 
     private void FixedUpdate()
