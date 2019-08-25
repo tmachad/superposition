@@ -1,6 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+
+public struct AnimationSyncData
+{
+    public bool Walking;
+    public bool HitGround;
+    public bool Jump;
+    public Vector2 Velocity;
+    public Vector2 Input;
+}
+
+public class AnimationSyncEvent : UnityEvent<AnimationSyncData>
+{
+
+}
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -9,6 +25,9 @@ public class PlayerController : MonoBehaviour
     public float m_GroundSpeed = 3.0f;
     public float m_AirDrag = 0.1f;
     public float m_JumpHeight = 3.0f;
+
+    [HideInInspector]
+    public AnimationSyncEvent m_AnimationSyncEvent;
 
     [SerializeField]
     private LayerMask m_GroundLayer;
@@ -23,6 +42,11 @@ public class PlayerController : MonoBehaviour
 
     private Animator m_Animator;
 
+    private void Awake()
+    {
+        m_AnimationSyncEvent = new AnimationSyncEvent();
+    }
+
     private void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody2D>();
@@ -36,6 +60,11 @@ public class PlayerController : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Jump");
         Vector2 velocity = new Vector2(m_Rigidbody.velocity.x, m_Rigidbody.velocity.y);
+        AnimationSyncData syncData = new AnimationSyncData
+        {
+            HitGround = false,
+            Jump = false
+        };
 
         // Check for ground below the player
         Vector2 bottom = new Vector2(transform.position.x + m_Collider.offset.x, transform.position.y + m_Collider.offset.y - m_Collider.bounds.extents.y);
@@ -48,9 +77,12 @@ public class PlayerController : MonoBehaviour
         {
             // Just hit the ground after falling
             m_Animator.SetTrigger("Hit Ground");
+            syncData.HitGround = true;
         }
 
         m_Animator.SetBool("Walking", horizontal != 0 && m_Grounded);
+        syncData.Walking = horizontal != 0 && m_Grounded;
+
         // Move horizontally if player is pressing a button, otherwise just maintain current horizontal velocity
         if (horizontal != 0)
         {
@@ -80,12 +112,17 @@ public class PlayerController : MonoBehaviour
             m_JumpStillPressed = true;
 
             m_Animator.SetTrigger("Jump");
+            syncData.Jump = true;
         } else if (vertical == 0)
         {
             m_JumpStillPressed = false;
         }
 
         m_Animator.SetFloat("Vertical Speed", velocity.y);
+        syncData.Velocity = velocity;
+        syncData.Input = new Vector2(horizontal, vertical);
+
+        m_AnimationSyncEvent.Invoke(syncData);
 
         m_Rigidbody.velocity = velocity;
     }
