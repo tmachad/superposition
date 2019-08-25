@@ -1,18 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public string m_MainMenuSceneName;
+    public string[] m_LevelSceneNames;
+
+    public void Pause()
     {
-        
+        // Pause game and open pause menu
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Resume()
     {
-        
+        // Resume game and close pause menu
+    }
+
+    public void MainMenu()
+    {
+        // Go to main menu scene
+    }
+
+    public void LoadLevel(int index)
+    {
+        // Load level from level array
+        SceneManager.LoadScene(m_LevelSceneNames[index], LoadSceneMode.Single);
     }
 }
