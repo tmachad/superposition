@@ -9,6 +9,7 @@ public class LevelDimension : MonoBehaviour
     public KeyCode m_SwapHereKey;
     public Camera m_Camera;
     public Rect m_KillBounds;
+    public LayerMask m_GroundLayer;
 
     private PostProcessLayer m_CameraEffect;
 
@@ -24,8 +25,19 @@ public class LevelDimension : MonoBehaviour
         Gizmos.DrawWireCube(new Vector2(transform.position.x, transform.position.y) + m_KillBounds.center, m_KillBounds.size);
     }
 
-    public void SwapCharacters(LevelDimension other)
+    public bool SwapCharacters(LevelDimension other)
     {
+        BoxCollider2D collider = m_Character.GetComponent<BoxCollider2D>();
+        Collider2D overlap = Physics2D.OverlapBox(m_Character.position, collider.size * 0.95f, 0, m_GroundLayer);
+        BoxCollider2D otherCollider = other.m_Character.GetComponent<BoxCollider2D>();
+        Collider2D otherOverlap = Physics2D.OverlapBox(other.m_Character.position, otherCollider.size * 0.95f, 0, m_GroundLayer);
+
+        if (overlap != null || otherOverlap != null)
+        {
+            // One of the two characters is inside a wall, so don't swap
+            return false;
+        }
+
         // Swap character positions
         Vector2 otherPosition = other.m_Character.transform.position;
         other.m_Character.transform.position = m_Character.transform.position;
@@ -43,6 +55,8 @@ public class LevelDimension : MonoBehaviour
         Rigidbody2D otherCharacter = other.m_Character;
         other.m_Character = m_Character;
         m_Character = otherCharacter;
+
+        return true;
     }
 
     public bool ContainsCharacter()

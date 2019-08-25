@@ -28,9 +28,16 @@ public class LevelManager : MonoBehaviour
         {
             if (Input.GetKeyDown(dimension.m_SwapHereKey) && dimension != m_ActiveDimension)
             {
-                m_ActiveDimension.SwapCharacters(dimension);
-                m_ActiveDimension = dimension;
-                break;
+                if (m_ActiveDimension.SwapCharacters(dimension))
+                {
+                    m_ActiveDimension = dimension;
+                    break;
+                } else
+                {
+                    // Can't swap due to blocked location on one end
+                    // Play a warning sound or something
+                    Debug.Log("Can't swap, something is blocked");
+                }
             }
         }
 
