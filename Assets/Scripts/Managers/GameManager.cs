@@ -15,16 +15,6 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
-    public void Pause()
-    {
-        // Pause game and open pause menu
-    }
-
-    public void Resume()
-    {
-        // Resume game and close pause menu
-    }
-
     public void MainMenu()
     {
         // Go to main menu scene
