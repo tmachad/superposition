@@ -4,9 +4,21 @@ using UnityEngine;
 
 public class LevelExit : MonoBehaviour
 {
+    public GameObject m_WinMenu;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public LayerMask m_PlayerLayer;
+
+    private void Start()
     {
-        Debug.Log("Trigger entered!");
+        m_WinMenu.SetActive(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (m_PlayerLayer == (m_PlayerLayer | 1 << other.gameObject.layer))
+        {
+            PauseManager.Instance.Pause(false);
+            m_WinMenu.SetActive(true);
+        }
     }
 }

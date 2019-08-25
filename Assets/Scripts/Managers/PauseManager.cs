@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class PauseManager : MonoBehaviour
 {
+    public static PauseManager Instance;
+
     public GameObject m_PauseMenuPanel;
     public KeyCode m_TogglePauseKey;
 
     private bool m_Paused = false;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -36,9 +43,12 @@ public class PauseManager : MonoBehaviour
         }
     }
 
-    public void Pause()
+    public void Pause(bool showUI = true)
     {
-        m_PauseMenuPanel.SetActive(true);
+        if (showUI)
+        {
+            m_PauseMenuPanel.SetActive(true);
+        }
         Time.timeScale = 0.0f;
         m_Paused = true;
     }
