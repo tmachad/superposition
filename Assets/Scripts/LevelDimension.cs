@@ -21,7 +21,7 @@ public class LevelDimension : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(new Vector2(transform.position.x, transform.position.y) + m_KillBounds.position, m_KillBounds.size);
+        Gizmos.DrawWireCube(new Vector2(transform.position.x, transform.position.y) + m_KillBounds.center, m_KillBounds.size);
     }
 
     public void SwapCharacters(LevelDimension other)

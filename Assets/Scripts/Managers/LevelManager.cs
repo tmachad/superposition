@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    public GameObject m_LoseMenu;
     public LevelDimension[] m_Dimensions;
 
     private LevelDimension m_ActiveDimension;
@@ -36,6 +37,8 @@ public class LevelManager : MonoBehaviour
         if (!m_ActiveDimension.ContainsCharacter())
         {
             // Player has left playable area; game over
+            PauseManager.Instance.Pause(false);
+            m_LoseMenu.SetActive(true);
         }
     }
 }
