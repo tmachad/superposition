@@ -7,18 +7,21 @@ public class LevelDimension : MonoBehaviour
 {
     public Rigidbody2D m_Character;
     public KeyCode m_SwapHereKey;
-    public PostProcessLayer m_CameraEffect;
+    public Camera m_Camera;
     public Rect m_KillBounds;
+
+    private PostProcessLayer m_CameraEffect;
 
     private void Start()
     {
+        m_CameraEffect = m_Camera.GetComponent<PostProcessLayer>();
         m_CameraEffect.enabled = m_Character.GetComponent<PlayerController>() == null;
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(m_KillBounds.position, m_KillBounds.size);
+        Gizmos.DrawWireCube(new Vector2(transform.position.x, transform.position.y) + m_KillBounds.position, m_KillBounds.size);
     }
 
     public void SwapCharacters(LevelDimension other)
