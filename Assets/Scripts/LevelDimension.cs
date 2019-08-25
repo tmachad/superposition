@@ -47,6 +47,6 @@ public class LevelDimension : MonoBehaviour
 
     public bool ContainsCharacter()
     {
-        return m_KillBounds.Contains(m_Character.transform.position);
+        return m_KillBounds.Contains(m_Character.transform.localPosition);
     }
 }
