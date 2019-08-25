@@ -19,8 +19,8 @@ public class SuperpositionController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 followRelativePos = m_Follow.transform.position;
+        Vector3 relativeFollowPos = m_Follow.transform.position - m_Follow.transform.parent.position;
 
-        m_Rigidbody.MovePosition(transform.parent.position + followRelativePos);
+        m_Rigidbody.MovePosition(transform.parent.position + relativeFollowPos);
     }
 }
