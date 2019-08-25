@@ -18,7 +18,7 @@ public class MainMenuManager : MonoBehaviour
         // Initialize to default state
         MainMenu();
 
-        int levelButtons = GameManager.Instance.m_LevelSceneNames.Length;
+        int levelButtons = LevelLoader.Instance.m_LevelSceneNames.Length;
         int buttonsInThisRow = 0;
         int rowIndex = -1;
         float colIndex = 0;
@@ -39,7 +39,7 @@ public class MainMenuManager : MonoBehaviour
             Button button = buttonObj.GetComponent<Button>();
             int levelIndex = i;
             button.onClick.AddListener(delegate {
-                GameManager.Instance.LoadLevel(levelIndex);
+                LevelLoader.Instance.LoadLevel(levelIndex);
             });
 
             RectTransform buttonTrans = buttonObj.GetComponent<RectTransform>();
@@ -74,6 +74,6 @@ public class MainMenuManager : MonoBehaviour
 
     public void LoadLevel(int index)
     {
-        GameManager.Instance.LoadLevel(index);
+        LevelLoader.Instance.LoadLevel(index);
     }
 }

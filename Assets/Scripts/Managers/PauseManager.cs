@@ -28,6 +28,14 @@ public class PauseManager : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        if (m_Paused)
+        {
+            Resume();
+        }
+    }
+
     public void Pause()
     {
         m_PauseMenuPanel.SetActive(true);

@@ -1,15 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-
     public LevelDimension[] m_Dimensions;
 
     private LevelDimension m_ActiveDimension;
 
-    void Start()
+    private void Start()
     {
         foreach (LevelDimension dimension in m_Dimensions)
         {
@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
         foreach (LevelDimension dimension in m_Dimensions)
         {
