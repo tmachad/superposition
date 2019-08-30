@@ -11,10 +11,12 @@ public class BasicTile : Tile
     public class SpriteMasks
     {
         public Sprite sprite;
-        public int[] masks;
+        public int requiredMask;
+        public int optionalMask;
     }
 
     public Sprite m_Preview;
+    public Sprite m_Error;
 
     public SpriteMasks[] m_Sprites;
 
@@ -37,6 +39,7 @@ public class BasicTile : Tile
 
     public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
     {
+        base.GetTileData(position, tilemap, ref tileData);
         int mask = 0;
         for (int i = 0; i < m_PositionsToCheck.Length; i++)
         {
@@ -53,18 +56,19 @@ public class BasicTile : Tile
 
     private Sprite GetSprite(int mask)
     {
-        foreach (SpriteMasks spriteMasks in m_Sprites)
+        foreach (SpriteMasks sm in m_Sprites)
         {
-            foreach (int m in spriteMasks.masks)
+            // Convert optional positions to 1 in both masks so they don't effect the comparison
+            int tempMask = mask | sm.optionalMask;
+            int tempReq = sm.requiredMask | sm.optionalMask;
+
+            if (tempMask == tempReq)
             {
-                if (m == mask)
-                {
-                    return spriteMasks.sprite;
-                }
+                return sm.sprite;
             }
         }
 
-        return m_Preview;
+        return m_Error;
     }
 
 #if UNITY_EDITOR
