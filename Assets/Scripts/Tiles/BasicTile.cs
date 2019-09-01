@@ -22,6 +22,8 @@ public class BasicTile : Tile
 
     public Vector3Int[] m_PositionsToCheck;
 
+    public SpriteNeighbourMask mask;
+
     public override void RefreshTile(Vector3Int position, ITilemap tilemap)
     {
         for (int yDelta = -1; yDelta <= 1; yDelta++)
