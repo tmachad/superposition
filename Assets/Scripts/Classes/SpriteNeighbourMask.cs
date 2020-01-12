@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public enum SpriteNeighbour : int
+public enum SpriteNeighbour : byte
 {
     TopLeft =       0b0000_0001,
     Top =           0b0000_0010,
@@ -16,6 +16,6 @@ public enum SpriteNeighbour : int
 public struct SpriteNeighbourMask
 {
     public Sprite sprite;
-    public int requiredNeighboursMask;
-    public int optionalNeighboursMask;
+    public SpriteNeighbour requiredNeighboursMask;
+    public SpriteNeighbour optionalNeighboursMask;
 }

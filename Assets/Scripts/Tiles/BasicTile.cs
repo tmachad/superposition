@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using System;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -43,10 +44,10 @@ public class BasicTile : Tile
     public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
     {
         base.GetTileData(position, tilemap, ref tileData);
-        int mask = 0;
+        SpriteNeighbour mask = 0;
         for (int i = 0; i < m_PositionsToCheck.Length; i++)
         {
-            mask += HasBasicTile(tilemap, position + m_PositionsToCheck[i]) ? (int)Mathf.Pow(2, i) : 0;
+            mask += (byte)(HasBasicTile(tilemap, position + m_PositionsToCheck[i]) ? Mathf.Pow(2, i) : 0);
         }
 
         tileData.sprite = GetSprite(mask);
@@ -57,20 +58,22 @@ public class BasicTile : Tile
         return tilemap.GetTile(position) == this;
     }
 
-    private Sprite GetSprite(int mask)
+    private Sprite GetSprite(SpriteNeighbour mask)
     {
+        Debug.Log($"Looking for sprite mask {Convert.ToString((byte)mask, 2)}");
         foreach (SpriteNeighbourMask sm in m_Sprites)
         {
             // Convert optional positions to 1 in both masks so they don't effect the comparison
-            int tempMask = mask | sm.optionalNeighboursMask;
-            int tempReq = sm.requiredNeighboursMask | sm.optionalNeighboursMask;
+            SpriteNeighbour tempMask = mask | sm.optionalNeighboursMask;
+            SpriteNeighbour tempReq = sm.requiredNeighboursMask | sm.optionalNeighboursMask;
 
             if (tempMask == tempReq)
             {
+                Debug.Log($"Found match: '{sm.sprite.name}' Req: {Convert.ToString((byte)sm.requiredNeighboursMask, 2)} Opt: {Convert.ToString((byte)sm.optionalNeighboursMask, 2)}");
                 return sm.sprite;
             }
         }
-
+        Debug.Log("No match found");
         return m_Error;
     }
 
