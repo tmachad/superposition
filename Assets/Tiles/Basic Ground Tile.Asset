@@ -196,28 +196,36 @@ MonoBehaviour:
     optionalNeighboursMask: 132
   - sprite: {fileID: -8724001009564104614, guid: b440d365a365dfd42a1ef07ea5c67e3c,
       type: 3}
+    requiredNeighboursMask: 126
+    optionalNeighboursMask: 0
+  - sprite: {fileID: -5136611472538014950, guid: b440d365a365dfd42a1ef07ea5c67e3c,
+      type: 3}
     requiredNeighboursMask: 18
     optionalNeighboursMask: 161
-  - sprite: {fileID: -5136611472538014950, guid: b440d365a365dfd42a1ef07ea5c67e3c,
+  - sprite: {fileID: -3044412672431463691, guid: b440d365a365dfd42a1ef07ea5c67e3c,
       type: 3}
     requiredNeighboursMask: 26
     optionalNeighboursMask: 160
-  - sprite: {fileID: -3044412672431463691, guid: b440d365a365dfd42a1ef07ea5c67e3c,
+  - sprite: {fileID: -8506579927260412776, guid: b440d365a365dfd42a1ef07ea5c67e3c,
       type: 3}
     requiredNeighboursMask: 10
     optionalNeighboursMask: 164
-  - sprite: {fileID: -8506579927260412776, guid: b440d365a365dfd42a1ef07ea5c67e3c,
-      type: 3}
-    requiredNeighboursMask: 251
-    optionalNeighboursMask: 0
   - sprite: {fileID: 544771733908418354, guid: b440d365a365dfd42a1ef07ea5c67e3c, type: 3}
-    requiredNeighboursMask: 254
+    requiredNeighboursMask: 251
     optionalNeighboursMask: 0
   - sprite: {fileID: -8900118926953661439, guid: b440d365a365dfd42a1ef07ea5c67e3c,
       type: 3}
+    requiredNeighboursMask: 254
+    optionalNeighboursMask: 0
+  - sprite: {fileID: -6702805978608602911, guid: b440d365a365dfd42a1ef07ea5c67e3c,
+      type: 3}
     requiredNeighboursMask: 210
     optionalNeighboursMask: 33
-  - sprite: {fileID: -6702805978608602911, guid: b440d365a365dfd42a1ef07ea5c67e3c,
+  - sprite: {fileID: -3784381865699015214, guid: b440d365a365dfd42a1ef07ea5c67e3c,
       type: 3}
     requiredNeighboursMask: 106
     optionalNeighboursMask: 132
+  - sprite: {fileID: 5433729868459186713, guid: b440d365a365dfd42a1ef07ea5c67e3c,
+      type: 3}
+    requiredNeighboursMask: 219
+    optionalNeighboursMask: 0
