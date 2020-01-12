@@ -7,22 +7,23 @@ using UnityEditor;
 
 public class BasicTile : Tile
 {
-    [System.Serializable]
-    public class SpriteMasks
-    {
-        public Sprite sprite;
-        public int requiredMask;
-        public int optionalMask;
-    }
-
     public Sprite m_Preview;
     public Sprite m_Error;
 
-    public SpriteMasks[] m_Sprites;
+    public SpriteNeighbourMask test;
 
-    public Vector3Int[] m_PositionsToCheck;
+    public SpriteNeighbourMask[] m_Sprites;
 
-    public SpriteNeighbourMask mask;
+    private readonly Vector3Int[] m_PositionsToCheck = {
+        new Vector3Int(-1, 1, 0),
+        new Vector3Int(0, 1, 0),
+        new Vector3Int(1, 1, 0),
+        new Vector3Int(-1, 0, 0),
+        new Vector3Int(1, 0, 0),
+        new Vector3Int(-1, -1, 0),
+        new Vector3Int(0, -1, 0),
+        new Vector3Int(1, -1, 0)
+    };
 
     public override void RefreshTile(Vector3Int position, ITilemap tilemap)
     {
@@ -58,11 +59,11 @@ public class BasicTile : Tile
 
     private Sprite GetSprite(int mask)
     {
-        foreach (SpriteMasks sm in m_Sprites)
+        foreach (SpriteNeighbourMask sm in m_Sprites)
         {
             // Convert optional positions to 1 in both masks so they don't effect the comparison
-            int tempMask = mask | sm.optionalMask;
-            int tempReq = sm.requiredMask | sm.optionalMask;
+            int tempMask = mask | sm.optionalNeighboursMask;
+            int tempReq = sm.requiredNeighboursMask | sm.optionalNeighboursMask;
 
             if (tempMask == tempReq)
             {
