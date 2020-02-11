@@ -11,8 +11,6 @@ public class BasicTile : Tile
     public Sprite m_Preview;
     public Sprite m_Error;
 
-    public SpriteNeighbourMask test;
-
     public SpriteNeighbourMask[] m_Sprites;
 
     private readonly Vector3Int[] m_PositionsToCheck = {
@@ -60,20 +58,17 @@ public class BasicTile : Tile
 
     private Sprite GetSprite(SpriteNeighbour mask)
     {
-        Debug.Log($"Looking for sprite mask {Convert.ToString((byte)mask, 2)}");
         foreach (SpriteNeighbourMask sm in m_Sprites)
         {
             // Convert optional positions to 1 in both masks so they don't effect the comparison
             SpriteNeighbour tempMask = mask | sm.optionalNeighboursMask;
             SpriteNeighbour tempReq = sm.requiredNeighboursMask | sm.optionalNeighboursMask;
 
-            if (tempMask == tempReq)
+            if (tempMask == tempReq && sm.sprite)
             {
-                Debug.Log($"Found match: '{sm.sprite.name}' Req: {Convert.ToString((byte)sm.requiredNeighboursMask, 2)} Opt: {Convert.ToString((byte)sm.optionalNeighboursMask, 2)}");
                 return sm.sprite;
             }
         }
-        Debug.Log("No match found");
         return m_Error;
     }
 

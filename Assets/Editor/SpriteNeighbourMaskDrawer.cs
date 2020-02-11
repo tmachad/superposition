@@ -13,41 +13,63 @@ public class SpriteNeighbourMaskDrawer : PropertyDrawer
         SerializedProperty requiredMaskProp = property.FindPropertyRelative("requiredNeighboursMask");
         SerializedProperty optionalMaskProp = property.FindPropertyRelative("optionalNeighboursMask");
 
+        // Reset indentation to fix fields being offset from rects
         position = EditorGUI.IndentedRect(position);
         int indentLevel = EditorGUI.indentLevel;
         EditorGUI.indentLevel = 0;
 
         EditorGUI.BeginProperty(position, label, property);
 
-        float maskGridWidth = EditorGUIUtility.singleLineHeight * 3 + EditorGUIUtility.standardVerticalSpacing * 2;
+        float maskGridSize = EditorGUIUtility.singleLineHeight * 3 + EditorGUIUtility.standardVerticalSpacing * 2;
 
-        Rect spriteFieldRect = new Rect(position.x, position.y, position.width - maskGridWidth * 2 - EditorGUIUtility.singleLineHeight * 2, EditorGUIUtility.singleLineHeight);
+        // Place sprite field along the top above sprite preview and to the right of mask grids
+        Rect spriteFieldRect = new Rect(
+            position.x,
+            position.y,
+            position.width - maskGridSize * 2 - EditorGUIUtility.singleLineHeight * 2,
+            EditorGUIUtility.singleLineHeight
+        );
+        // Place sprite preview along left edge
         Rect spritePreviewRect = new Rect(
             position.x,
             position.y + EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing,
-            maskGridWidth,
-            maskGridWidth
+            maskGridSize,
+            maskGridSize
         );
-        Rect requiredMaskFieldRect = new Rect(position.xMax - maskGridWidth * 2 - EditorGUIUtility.singleLineHeight, position.y, maskGridWidth, position.height);
-        Rect optionalMaskFieldRect = new Rect(position.xMax - maskGridWidth, position.y, maskGridWidth, position.height);
+        // Place required mask grid second from the right (singleLineHeight away from optional mask grid)
+        Rect requiredMaskFieldRect = new Rect(
+            position.xMax - maskGridSize * 2 - EditorGUIUtility.singleLineHeight, 
+            position.y, 
+            maskGridSize, 
+            maskGridSize + EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing
+        );
+        // Place optional mask grid along right edge
+        Rect optionalMaskFieldRect = new Rect(
+            position.xMax - maskGridSize, 
+            position.y, 
+            maskGridSize, 
+            maskGridSize + EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing
+        );
 
         SpriteNeighbour requiredMaskVal = (SpriteNeighbour)requiredMaskProp.intValue;
         SpriteNeighbour optionalMaskVal = (SpriteNeighbour)optionalMaskProp.intValue;
 
-        EditorGUI.PropertyField(spriteFieldRect, spriteProp, GUIContent.none);
-        if (spriteProp.propertyType == SerializedPropertyType.ObjectReference)
+        bool val = EditorGUI.PropertyField(spriteFieldRect, spriteProp, GUIContent.none);
+
+        // Render preview sprite
+        Sprite sprite = spriteProp.objectReferenceValue as Sprite;
+        if (sprite != null)
         {
-            Sprite sprite = spriteProp.objectReferenceValue as Sprite;
-            if (sprite != null)
-            {
-                Rect spritesheetRect = new Rect(
-                    sprite.textureRect.x / sprite.texture.width,
-                    sprite.textureRect.y / sprite.texture.height,
-                    sprite.textureRect.width / sprite.texture.width,
-                    sprite.textureRect.height / sprite.texture.height
-                );
-                GUI.DrawTextureWithTexCoords(spritePreviewRect, sprite.texture, spritesheetRect);
-            }
+            Rect spritesheetRect = new Rect(
+                sprite.textureRect.x / sprite.texture.width,
+                sprite.textureRect.y / sprite.texture.height,
+                sprite.textureRect.width / sprite.texture.width,
+                sprite.textureRect.height / sprite.texture.height
+            );
+            GUI.DrawTextureWithTexCoords(spritePreviewRect, sprite.texture, spritesheetRect);
+        } else
+        {
+            EditorGUI.DrawRect(spritePreviewRect, Color.grey);
         }
 
         requiredMaskVal = ToggleGrid(requiredMaskFieldRect, requiredMaskVal, "Required");
@@ -63,7 +85,7 @@ public class SpriteNeighbourMaskDrawer : PropertyDrawer
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
         int lineCount = 4;
-        return EditorGUIUtility.singleLineHeight * lineCount + EditorGUIUtility.standardVerticalSpacing * (lineCount - 1);
+        return EditorGUIUtility.singleLineHeight * lineCount + EditorGUIUtility.standardVerticalSpacing * lineCount;
     }
 
     /// <summary>

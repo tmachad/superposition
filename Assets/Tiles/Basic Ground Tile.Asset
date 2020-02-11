@@ -38,10 +38,6 @@ MonoBehaviour:
   m_Preview: {fileID: 3809333609213854930, guid: b440d365a365dfd42a1ef07ea5c67e3c,
     type: 3}
   m_Error: {fileID: 1269115465126947162, guid: b440d365a365dfd42a1ef07ea5c67e3c, type: 3}
-  test:
-    sprite: {fileID: 0}
-    requiredNeighboursMask: 0
-    optionalNeighboursMask: 0
   m_Sprites:
   - sprite: {fileID: -3878557786174838139, guid: b440d365a365dfd42a1ef07ea5c67e3c,
       type: 3}
@@ -49,7 +45,7 @@ MonoBehaviour:
     optionalNeighboursMask: 37
   - sprite: {fileID: -4419227343285247731, guid: b440d365a365dfd42a1ef07ea5c67e3c,
       type: 3}
-    requiredNeighboursMask: -8
+    requiredNeighboursMask: 248
     optionalNeighboursMask: 5
   - sprite: {fileID: -1977380741081267030, guid: b440d365a365dfd42a1ef07ea5c67e3c,
       type: 3}
@@ -192,7 +188,7 @@ MonoBehaviour:
     optionalNeighboursMask: 33
   - sprite: {fileID: -5364719489291505224, guid: b440d365a365dfd42a1ef07ea5c67e3c,
       type: 3}
-    requiredNeighboursMask: -181
+    requiredNeighboursMask: 75
     optionalNeighboursMask: 132
   - sprite: {fileID: -8724001009564104614, guid: b440d365a365dfd42a1ef07ea5c67e3c,
       type: 3}

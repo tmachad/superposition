@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System;
+using UnityEngine;
 
 public enum SpriteNeighbour : byte
 {
@@ -13,7 +15,7 @@ public enum SpriteNeighbour : byte
 }
 
 [System.Serializable]
-public struct SpriteNeighbourMask
+public class SpriteNeighbourMask
 {
     public Sprite sprite;
     public SpriteNeighbour requiredNeighboursMask;
