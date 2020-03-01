@@ -2,25 +2,45 @@
 using UnityEngine;
 using System;
 
-[CustomPropertyDrawer(typeof(SpriteNeighbourMask))]
+[CustomPropertyDrawer(typeof(SpriteNeighbourMask), true)]
 public class SpriteNeighbourMaskDrawer : PropertyDrawer
 {
-    private readonly SpriteNeighbour[] m_EnumValues = (SpriteNeighbour[])Enum.GetValues(typeof(SpriteNeighbour));
+    protected readonly SpriteNeighbour[] m_EnumValues = (SpriteNeighbour[])Enum.GetValues(typeof(SpriteNeighbour));
+    protected readonly float maskGridSize = EditorGUIUtility.singleLineHeight * 3 + EditorGUIUtility.standardVerticalSpacing * 2;
 
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+    {
+        // Do some initial housekeeping before rendering the control
+        position = EditorGUI.IndentedRect(position);    // Prevent clickable area and visible control from being offset
+        int indentLevel = EditorGUI.indentLevel;
+        EditorGUI.indentLevel = 0;
+        EditorGUI.BeginProperty(position, label, property);
+
+        // Render the control
+        Render(position, property, label);
+
+        // Clean up after rendering
+        EditorGUI.EndProperty();
+        EditorGUI.indentLevel = indentLevel;
+    }
+
+    public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+    {
+        int lineCount = 4;
+        return EditorGUIUtility.singleLineHeight * lineCount + EditorGUIUtility.standardVerticalSpacing * lineCount;
+    }
+
+    /// <summary>
+    /// Render the control to the inspector.
+    /// </summary>
+    /// <param name="position">The rect containing the control.</param>
+    /// <param name="property">The serialized property to render the control for.</param>
+    /// <param name="label">The label for this property.</param>
+    protected virtual void Render(Rect position, SerializedProperty property, GUIContent label)
     {
         SerializedProperty spriteProp = property.FindPropertyRelative("sprite");
         SerializedProperty requiredMaskProp = property.FindPropertyRelative("requiredNeighboursMask");
         SerializedProperty optionalMaskProp = property.FindPropertyRelative("optionalNeighboursMask");
-
-        // Reset indentation to fix fields being offset from rects
-        position = EditorGUI.IndentedRect(position);
-        int indentLevel = EditorGUI.indentLevel;
-        EditorGUI.indentLevel = 0;
-
-        EditorGUI.BeginProperty(position, label, property);
-
-        float maskGridSize = EditorGUIUtility.singleLineHeight * 3 + EditorGUIUtility.standardVerticalSpacing * 2;
 
         // Place sprite field along the top above sprite preview and to the right of mask grids
         Rect spriteFieldRect = new Rect(
@@ -38,16 +58,16 @@ public class SpriteNeighbourMaskDrawer : PropertyDrawer
         );
         // Place required mask grid second from the right (singleLineHeight away from optional mask grid)
         Rect requiredMaskFieldRect = new Rect(
-            position.xMax - maskGridSize * 2 - EditorGUIUtility.singleLineHeight, 
-            position.y, 
-            maskGridSize, 
+            position.xMax - maskGridSize * 2 - EditorGUIUtility.singleLineHeight,
+            position.y,
+            maskGridSize,
             maskGridSize + EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing
         );
         // Place optional mask grid along right edge
         Rect optionalMaskFieldRect = new Rect(
-            position.xMax - maskGridSize, 
-            position.y, 
-            maskGridSize, 
+            position.xMax - maskGridSize,
+            position.y,
+            maskGridSize,
             maskGridSize + EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing
         );
 
@@ -67,7 +87,8 @@ public class SpriteNeighbourMaskDrawer : PropertyDrawer
                 sprite.textureRect.height / sprite.texture.height
             );
             GUI.DrawTextureWithTexCoords(spritePreviewRect, sprite.texture, spritesheetRect);
-        } else
+        }
+        else
         {
             EditorGUI.DrawRect(spritePreviewRect, Color.grey);
         }
@@ -77,15 +98,6 @@ public class SpriteNeighbourMaskDrawer : PropertyDrawer
 
         requiredMaskProp.intValue = (int)requiredMaskVal;
         optionalMaskProp.intValue = (int)optionalMaskVal;
-
-        EditorGUI.EndProperty();
-        EditorGUI.indentLevel = indentLevel;
-    }
-
-    public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
-    {
-        int lineCount = 4;
-        return EditorGUIUtility.singleLineHeight * lineCount + EditorGUIUtility.standardVerticalSpacing * lineCount;
     }
 
     /// <summary>
@@ -94,7 +106,7 @@ public class SpriteNeighbourMaskDrawer : PropertyDrawer
     /// <param name="offset">The position of the top-left corner of the grid</param>
     /// <param name="mask">The mask to generate a grid for</param>
     /// <returns>The mask value after being modified by user input</returns>
-    private SpriteNeighbour ToggleGrid(Rect rect, SpriteNeighbour mask, string label = "")
+    protected SpriteNeighbour ToggleGrid(Rect rect, SpriteNeighbour mask, string label = "")
     {
         if (label != "")
         {

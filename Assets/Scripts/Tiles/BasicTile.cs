@@ -6,65 +6,15 @@ using System;
 using UnityEditor;
 #endif
 
-public class BasicTile : Tile
+public class BasicTile : BaseTile
 {
-    public Sprite m_Preview;
-    public Sprite m_Error;
-
     public SpriteNeighbourMask[] m_Sprites;
 
-    private readonly Vector3Int[] m_PositionsToCheck = {
-        new Vector3Int(-1, 1, 0),
-        new Vector3Int(0, 1, 0),
-        new Vector3Int(1, 1, 0),
-        new Vector3Int(-1, 0, 0),
-        new Vector3Int(1, 0, 0),
-        new Vector3Int(-1, -1, 0),
-        new Vector3Int(0, -1, 0),
-        new Vector3Int(1, -1, 0)
-    };
-
-    public override void RefreshTile(Vector3Int position, ITilemap tilemap)
-    {
-        for (int yDelta = -1; yDelta <= 1; yDelta++)
-        {
-            for (int xDelta = -1; xDelta <=1; xDelta++)
-            {
-                Vector3Int otherPos = new Vector3Int(position.x + xDelta, position.y + yDelta, position.z);
-                if (HasBasicTile(tilemap, otherPos))
-                {
-                    tilemap.RefreshTile(otherPos);
-                }
-            }
-        }
-    }
-
-    public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
-    {
-        base.GetTileData(position, tilemap, ref tileData);
-        SpriteNeighbour mask = 0;
-        for (int i = 0; i < m_PositionsToCheck.Length; i++)
-        {
-            mask += (byte)(HasBasicTile(tilemap, position + m_PositionsToCheck[i]) ? Mathf.Pow(2, i) : 0);
-        }
-
-        tileData.sprite = GetSprite(mask);
-    }
-
-    private bool HasBasicTile(ITilemap tilemap, Vector3Int position)
-    {
-        return tilemap.GetTile(position) == this;
-    }
-
-    private Sprite GetSprite(SpriteNeighbour mask)
+    protected override Sprite GetSprite(SpriteNeighbour mask)
     {
         foreach (SpriteNeighbourMask sm in m_Sprites)
         {
-            // Convert optional positions to 1 in both masks so they don't effect the comparison
-            SpriteNeighbour tempMask = mask | sm.optionalNeighboursMask;
-            SpriteNeighbour tempReq = sm.requiredNeighboursMask | sm.optionalNeighboursMask;
-
-            if (tempMask == tempReq && sm.sprite)
+            if (MatchesMask(sm, mask))
             {
                 return sm.sprite;
             }
@@ -73,9 +23,9 @@ public class BasicTile : Tile
     }
 
 #if UNITY_EDITOR
-    // The following is a helper that adds a menu item to create a RoadTile Asset
+    // The following is a helper that adds a menu item to create a BasicTile Asset
     [MenuItem("Assets/Create/BasicTile")]
-    public static void CreateRoadTile()
+    public static void CreateTile()
     {
         string path = EditorUtility.SaveFilePanelInProject("Save Basic Tile", "New Basic Tile", "Asset", "Save Basic Tile", "Assets");
         if (path == "")

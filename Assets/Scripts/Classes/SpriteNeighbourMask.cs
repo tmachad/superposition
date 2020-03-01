@@ -21,3 +21,9 @@ public class SpriteNeighbourMask
     public SpriteNeighbour requiredNeighboursMask;
     public SpriteNeighbour optionalNeighboursMask;
 }
+
+[System.Serializable]
+public class AnimatedSpriteNeighbourMask : SpriteNeighbourMask
+{
+    public Sprite[] animationSprites;
+}

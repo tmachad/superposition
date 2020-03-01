@@ -1,0 +1,463 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17daffdf2c37f6d49abc5d88759319ca, type: 3}
+  m_Name: Static Divider Tile
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 1926554754602676975, guid: cc49b0ef8694dac4495439dd1d78d858,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 1
+  m_Preview: {fileID: 1926554754602676975, guid: cc49b0ef8694dac4495439dd1d78d858,
+    type: 3}
+  m_Error: {fileID: 21300000, guid: 6a0a98f33c3db854b9c67048b75fd161, type: 3}
+  m_AnimationSpeed: 20
+  m_Sprites:
+  - sprite: {fileID: -2177961364492157339, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 255
+    optionalNeighboursMask: 0
+    animationSprites:
+    - {fileID: -2177961364492157339, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 1667785430634536929, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 1947362630419829245, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 8495423624039178517, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: -9158831474938766598, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 208
+    optionalNeighboursMask: 37
+    animationSprites:
+    - {fileID: -9158831474938766598, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 6169007391721367982, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -7093677745138074990, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -5364968779453791588, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 6569562646783737664, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 22
+    optionalNeighboursMask: 161
+    animationSprites:
+    - {fileID: 6569562646783737664, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 7996952661042321660, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 5642197889397413651, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -8857032696982293723, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: -3030622381568834547, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 104
+    optionalNeighboursMask: 133
+    animationSprites:
+    - {fileID: -3030622381568834547, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 1277570749689695627, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 7166185641336957559, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -8759183317493120867, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: -1257939716374124474, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 11
+    optionalNeighboursMask: 164
+    animationSprites:
+    - {fileID: -1257939716374124474, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -3598289850847520049, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 5176062281384664915, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 917511561497771850, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: -1631377902173649293, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 248
+    optionalNeighboursMask: 5
+    animationSprites:
+    - {fileID: -1631377902173649293, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 2640079376703254382, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -1087023534605427570, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 8102178221324310037, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 6025363399012943037, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 31
+    optionalNeighboursMask: 160
+    animationSprites:
+    - {fileID: 6025363399012943037, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 8073012232457511925, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -1763670727967534512, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -8820588499435341412, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 6620868020529580387, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 214
+    optionalNeighboursMask: 33
+    animationSprites:
+    - {fileID: 6620868020529580387, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -3035735293619859505, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -459625857901441023, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 2573303287006711606, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 6886080622617912441, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 107
+    optionalNeighboursMask: 132
+    animationSprites:
+    - {fileID: 6886080622617912441, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -1523076996265771228, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -7115385148710161423, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 4489020881356893729, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 4642385054459029289, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 16
+    optionalNeighboursMask: 165
+    animationSprites:
+    - {fileID: 4642385054459029289, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -2725495696702605416, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -9035361066344830582, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -8217046860087739853, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 3062158581125828798, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 24
+    optionalNeighboursMask: 165
+    animationSprites:
+    - {fileID: 3062158581125828798, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 2870628974200469951, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 5902103139166303119, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -121335657748318956, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 4734963423775031403, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 8
+    optionalNeighboursMask: 165
+    animationSprites:
+    - {fileID: 4734963423775031403, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 3863059310184522858, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -6553465121935847906, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -3477962295933317820, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: -4974410314083062098, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 64
+    optionalNeighboursMask: 165
+    animationSprites:
+    - {fileID: -4974410314083062098, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -4467187477368891964, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 8222721242451008143, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 416925230500612561, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 3524128112065761260, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 66
+    optionalNeighboursMask: 165
+    animationSprites:
+    - {fileID: 3524128112065761260, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 4338144741769507487, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 1785734668884389293, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -6304364590778756246, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: -1902071201139872281, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 2
+    optionalNeighboursMask: 165
+    animationSprites:
+    - {fileID: -1902071201139872281, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -4699646692973497180, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -379270360127724792, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -5364251332473213348, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: -336630227243240899, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 80
+    optionalNeighboursMask: 37
+    animationSprites:
+    - {fileID: -336630227243240899, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 6877591200099855836, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -8638547663332743975, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -3380623002398270484, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: -352336317502213065, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 18
+    optionalNeighboursMask: 161
+    animationSprites:
+    - {fileID: -352336317502213065, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 4093765414928374940, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -5524545374189357265, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 2805632503714742324, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: -4083928067849933254, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 72
+    optionalNeighboursMask: 133
+    animationSprites:
+    - {fileID: -4083928067849933254, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -8664257851705014688, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 5401094620163585149, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 2272650606812535321, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: -995763247247386516, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 10
+    optionalNeighboursMask: 164
+    animationSprites:
+    - {fileID: -995763247247386516, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 3812393177258561407, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 6644796095669592148, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 7685746970396366002, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: -852630901240305416, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 88
+    optionalNeighboursMask: 5
+    animationSprites:
+    - {fileID: -852630901240305416, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 1137175662691915215, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 4777577199647673956, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -5638281214393318946, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 2801709193751481623, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 26
+    optionalNeighboursMask: 160
+    animationSprites:
+    - {fileID: 2801709193751481623, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 8398961579582012960, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -3080925977912667025, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -6014742868643746, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 7947123539110913033, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 82
+    optionalNeighboursMask: 33
+    animationSprites:
+    - {fileID: 7947123539110913033, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 2016284563551889733, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -7547377887690801708, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -8862072322972964112, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: -5974890665213081942, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 74
+    optionalNeighboursMask: 132
+    animationSprites:
+    - {fileID: -5974890665213081942, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 772838672436358586, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 320698971332041631, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 3330367822152309104, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: -5138743535065580957, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 90
+    optionalNeighboursMask: 0
+    animationSprites:
+    - {fileID: -5138743535065580957, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -7572214875898599349, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 2330577001308030584, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -8638847469654590520, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 4432325367578909812, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 127
+    optionalNeighboursMask: 0
+    animationSprites:
+    - {fileID: 4432325367578909812, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 2927612332827151263, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -9211518356774038900, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 3901019395484775812, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: -8683504681911678315, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 251
+    optionalNeighboursMask: 0
+    animationSprites:
+    - {fileID: -8683504681911678315, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 2605511262685082531, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -7883634865132287797, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 1733838976303111340, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 1864997127017980645, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 254
+    optionalNeighboursMask: 0
+    animationSprites:
+    - {fileID: 1864997127017980645, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 7518857802842570695, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 4089905447465275475, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 5119175899779833661, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 7897473472415043372, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 223
+    optionalNeighboursMask: 0
+    animationSprites:
+    - {fileID: 7897473472415043372, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 3886954032156156206, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 8291525311887568675, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 5760185760300312462, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 8773745667729114820, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 219
+    optionalNeighboursMask: 0
+    animationSprites:
+    - {fileID: 8773745667729114820, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -4915826321305609097, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 6615263304805189439, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 8835638569781982721, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 3442677998492975248, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 126
+    optionalNeighboursMask: 0
+    animationSprites:
+    - {fileID: 3442677998492975248, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 2338131313208012851, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -7737153212090776793, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -3098792949408738883, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 5671665460704615615, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 123
+    optionalNeighboursMask: 0
+    animationSprites:
+    - {fileID: 5671665460704615615, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -7279313663108145225, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 932430356802467302, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 6033416718530970548, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: -7136490884598136973, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 222
+    optionalNeighboursMask: 0
+    animationSprites:
+    - {fileID: -7136490884598136973, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -6431263032790846693, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 2438064891830669214, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 3099097943680658061, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: -7823938272599238495, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 95
+    optionalNeighboursMask: 0
+    animationSprites:
+    - {fileID: -7823938272599238495, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 6326071782908343201, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 5963102236151628377, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 3365860165888548978, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: -1950875894758978488, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 250
+    optionalNeighboursMask: 0
+    animationSprites:
+    - {fileID: -1950875894758978488, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -530371371270957992, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -4977750190319759752, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -7964628589791657273, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 2576094087811921101, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 94
+    optionalNeighboursMask: 0
+    animationSprites:
+    - {fileID: 2576094087811921101, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -5091150258609140512, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -2237570622960601746, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -3479890098768590813, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 3705053360531468325, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 218
+    optionalNeighboursMask: 0
+    animationSprites:
+    - {fileID: 3705053360531468325, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 8854605203825648966, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 4094710798854263583, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -1530564181827971720, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: -4086171034308198674, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 91
+    optionalNeighboursMask: 0
+    animationSprites:
+    - {fileID: -4086171034308198674, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -4718227325010172221, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -869770612956512799, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 9149545998958359691, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 7736012196365750125, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 122
+    optionalNeighboursMask: 0
+    animationSprites:
+    - {fileID: 7736012196365750125, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -4298592490987962782, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -1924073942638883334, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -1307679441816348387, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 2673769054075721692, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 86
+    optionalNeighboursMask: 33
+    animationSprites:
+    - {fileID: 2673769054075721692, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 1706954483178154885, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 586170409344077929, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -4218941838425503697, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 561421749474841988, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    requiredNeighboursMask: 210
+    optionalNeighboursMask: 33
+    animationSprites:
+    - {fileID: 561421749474841988, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -1305482744307245220, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -589962198405193411, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -1290012797842160163, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: -4009935698180717202, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 75
+    optionalNeighboursMask: 132
+    animationSprites:
+    - {fileID: -4009935698180717202, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 72405975438729665, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 428444414139525089, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -6811798412020125975, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 735672200318417974, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    requiredNeighboursMask: 106
+    optionalNeighboursMask: 132
+    animationSprites:
+    - {fileID: 735672200318417974, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -3106230711049016927, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -491868275331744401, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -2951692072376990130, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: -6526599450473637310, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 120
+    optionalNeighboursMask: 5
+    animationSprites:
+    - {fileID: -6526599450473637310, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 7753598064317517360, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -1646192751029879051, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 1642015375818265285, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: -130194987262683295, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 27
+    optionalNeighboursMask: 160
+    animationSprites:
+    - {fileID: -130194987262683295, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 8367121657200239506, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -5867662777505084152, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -5209761512658013029, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: -6576578619004695642, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 216
+    optionalNeighboursMask: 5
+    animationSprites:
+    - {fileID: -6576578619004695642, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -3692563653786152192, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 7152028116315111553, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 6572470449903706190, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 2249671754784290443, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 30
+    optionalNeighboursMask: 160
+    animationSprites:
+    - {fileID: 2249671754784290443, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 4837677274439767684, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 5562545849736947122, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 1469475612314870898, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+  - sprite: {fileID: 1926554754602676975, guid: cc49b0ef8694dac4495439dd1d78d858,
+      type: 3}
+    requiredNeighboursMask: 0
+    optionalNeighboursMask: 165
+    animationSprites:
+    - {fileID: 1926554754602676975, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: 1438487362593137952, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -4591434936243762907, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
+    - {fileID: -827997675538097949, guid: cc49b0ef8694dac4495439dd1d78d858, type: 3}
